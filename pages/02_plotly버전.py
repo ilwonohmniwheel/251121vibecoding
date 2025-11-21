@@ -11,7 +11,7 @@ st.title("MBTI 비율 상/하위국가 보기 📊")
 st.markdown("MBTI 유형을 선택하면 해당 유형의 비율이 높은 상위 10개국과 낮은 10개국을 인터랙티브한 막대그래프로 보여줍니다. ✨")
 
 # 데이터 경로 (업로드된 파일의 로컬 경로를 사용)
-DATA_URL = "/mnt/data/countriesMBTI_16types.csv"
+DATA_URL = "countriesMBTI_16types.csv"
 
 # -------------------------
 # 데이터 로드
