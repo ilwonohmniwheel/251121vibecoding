@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>정보기술 기능반 모집</title>
+<meta name="description" content="정보기술(IT Software Solution for Business) 기능반 신입 부원 모집 안내. 기능경기대회 입상 혜택과 대회 소개, 공개 과제 자료 다운로드.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a dark "terminal" header band, then a single reading column with a benefit ladder (지방 → 전국 → 국제),
+   the competition structure as a scoreboard table, and the attachments as a file list. */
+:root{
+  --bg:#f5f6f8; --paper:#ffffff; --ink:#15212e; --muted:#5b6977; --line:#d8dee5;
+  --navy:#0e2740; --navy-fg:#eef3f8; --accent:#1f6feb; --accent-fg:#ffffff; --accent-soft:#e4eefc;
+  --gold:#c7901b; --gold-soft:#fbf1dc;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root{
+  --bg:#0f141a; --paper:#171d25; --ink:#e6eaef; --muted:#9aa6b3; --line:#2b353f;
+  --navy:#0a1a2b; --navy-fg:#e6eef7; --accent:#6ea8ff; --accent-fg:#0b1a2e; --accent-soft:#1d2c42;
+  --gold:#e3b24e; --gold-soft:#332a16; color-scheme:dark } }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+a{color:var(--accent)}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* header band */
+.hero{background:var(--navy);color:var(--navy-fg);padding-block:44px 48px;border-bottom:4px solid var(--gold)}
+.hero .tag{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--gold);margin:0 0 14px}
+.hero h1{font-size:clamp(30px,6vw,48px);font-weight:900;line-height:1.2;margin:0 0 14px;text-wrap:balance;letter-spacing:-.01em}
+.hero p{font-size:clamp(16px,2.2vw,18px);max-width:40em;margin:0 0 24px;opacity:.92}
+.hero .cta{display:inline-flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;font:inherit;font-weight:700;font-size:15px;padding:11px 20px;border-radius:8px;text-decoration:none;line-height:1.3;border:1.5px solid transparent}
+.btn.primary{background:var(--gold);color:#1a1200;border-color:var(--gold)}
+.btn.outline{color:var(--navy-fg);border-color:rgba(255,255,255,.4)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* quick facts strip */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:-28px auto 0;border-radius:10px;overflow:hidden;position:relative}
+.facts div{background:var(--paper);padding:14px 16px}
+.facts dt{font-size:12px;color:var(--muted);letter-spacing:.04em;margin:0 0 2px}
+.facts dd{margin:0;font-weight:700;font-size:16px}
+.facts dd small{font-weight:400;color:var(--muted)}
+
+/* sections */
+section{padding-block:44px 8px}
+h2{font-size:clamp(22px,3.5vw,28px);font-weight:900;margin:0 0 6px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 22px;max-width:60ch}
+p{max-width:65ch}
+
+/* benefit ladder */
+.ladder{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.rung{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:start}
+.rung .lvl{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);padding:4px 9px;border-radius:999px;white-space:nowrap;margin-top:3px}
+.rung h3{margin:0;font-size:18px;grid-column:2}
+.rung ul{margin:4px 0 0;padding-left:18px;grid-column:2}
+.rung li{margin:3px 0}
+.rung li b{font-weight:700}
+.rung.top{border-color:var(--gold);background:linear-gradient(0deg,var(--gold-soft),var(--paper) 70%)}
+.rung.top .lvl{color:#6b4a00;background:var(--gold-soft);border:1px solid var(--gold)}
+@media (prefers-color-scheme: dark){ .rung.top .lvl{color:var(--gold)} }
+.note{font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding-left:12px;margin:18px 0 0}
+
+/* scoreboard table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th{background:var(--accent-soft);font-weight:700;font-size:13px;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
+tfoot td{font-weight:700;background:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.chips li{font-family:var(--mono);font-size:13px;padding:5px 11px;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 22px;min-width:0}
+.card h3{margin:0 0 8px;font-size:17px}
+.card p,.card ul{margin:0;font-size:15px}
+.card ul{padding-left:18px}
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.timeline li{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:baseline}
+.timeline .when{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
+
+/* files */
+.files{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--paper)}
+.file{display:flex;align-items:center;gap:14px;padding:14px 16px;border-top:1px solid var(--line)}
+.file:first-child{border-top:0}
+.ftype{flex:none;width:46px;height:46px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:500}
+.finfo{flex:1;min-width:0}
+.fname{font-weight:700;overflow-wrap:anywhere}
+.fdesc{font-size:13px;color:var(--muted)}
+.factions{display:flex;gap:8px;flex:none}
+.sbtn{font:inherit;font-size:14px;font-weight:500;padding:7px 13px;border-radius:7px;border:1.5px solid var(--accent);color:var(--accent);text-decoration:none;white-space:nowrap;line-height:1.2;background:transparent}
+.sbtn.fill{background:var(--accent);color:var(--accent-fg)}
+.sbtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media (max-width:560px){ .file{flex-wrap:wrap} .factions{width:100%;justify-content:flex-end}
+  .rung{grid-template-columns:1fr} .rung .lvl{justify-self:start;margin-top:0} .rung h3,.rung ul{grid-column:1} }
+
+/* apply */
+.apply{background:var(--navy);color:var(--navy-fg);border-radius:14px;padding:28px clamp(20px,4vw,36px);margin-top:10px}
+.apply h2{color:var(--navy-fg)}
+.apply .lead{color:var(--navy-fg);opacity:.85}
+.apply dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 24px;margin:0}
+.apply dt{font-size:12px;letter-spacing:.06em;color:var(--gold);font-family:var(--mono)}
+.apply dd{margin:2px 0 0;font-weight:500}
+.apply .mark{border-bottom:2px dotted var(--gold)}
+
+footer{padding-block:36px 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 6px;max-width:none}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="tag">// 2026학년도 신입 부원 모집</p>
+    <h1>코드로 메달을 따는 동아리,<br>정보기술 기능반</h1>
+    <p>지방기능경기대회 정보기술(IT Software Solution for Business) 직종에 출전할 선수를 모집합니다. C#과 Java로 실제 업무용 프로그램을 만드는 훈련을 하고, 입상하면 국가기술자격을 시험 없이 취득할 수 있고, 전국대회 입상자에게는 삼성전자 특별채용의 길도 열립니다.</p>
+    <div class="cta">
+      <a class="btn primary" href="#apply">지원 방법 보기</a>
+      <a class="btn outline" href="#files">공개 과제 받기</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <dl class="facts">
+    <div><dt>직종</dt><dd>정보기술 <small>(IT Software Solution for Business)</small></dd></div>
+    <div><dt>사용 언어</dt><dd>C# · Java</dd></div>
+    <div><dt>지방대회</dt><dd>매년 4월 <small>· 5일간</small></dd></div>
+    <div><dt>전국대회</dt><dd>매년 8~9월</dd></div>
+  </dl>
+</div>
+
+<main class="wrap">
+
+<section id="benefits">
+  <h2>입상하면 무엇이 달라지나</h2>
+  <p class="lead">기능경기대회는 지방대회, 전국대회, 국제기능올림픽으로 이어지는 사다리입니다. 한 단계 오를 때마다 혜택이 커집니다.</p>
+  <ol class="ladder">
+    <li class="rung">
+      <span class="lvl">STEP 1</span>
+      <h3>지방기능경기대회 입상 (1~3위)</h3>
+      <ul>
+        <li><b>프로그래밍기능사 필기·실기 시험 면제</b> — 시험 없이 국가기술자격을 취득합니다.</li>
+        <li>상금: 금메달 30만원 · 은메달 20만원 · 동메달 10만원, 상장과 메달 수여</li>
+        <li><b>전국기능경기대회 출전 자격</b> 부여</li>
+      </ul>
+    </li>
+    <li class="rung">
+      <span class="lvl">STEP 2</span>
+      <h3>전국기능경기대회 입상 (1~3위)</h3>
+      <ul>
+        <li><b>정보처리산업기사 실기시험 면제</b> 또는 <b>프로그래밍기능사 필기·실기 면제</b> 중 택 1</li>
+        <li>상금: 금메달 1,000만원 · 은메달 600만원 · 동메달 400만원 (고용노동부 장관상 · 대회장상)</li>
+        <li>금·은메달 입상자는 <b>국제기능올림픽 국가대표 선발전</b> 참가 자격</li>
+        <li>다수 대학의 기능우수자 특별전형 지원 자격(대학별 요강 확인)</li>
+      </ul>
+    </li>
+    <li class="rung">
+      <span class="lvl">STEP 2+</span>
+      <h3>삼성전자 등 삼성 계열사 특별채용</h3>
+      <ul>
+        <li>삼성은 2007년부터 전국기능경기대회 출전 우수 기능인력을 <b>매년 100명 안팎</b> 채용해 왔고, 2007~2025년 누적 <b>입상자 1,600여 명</b>을 특별채용했습니다.</li>
+        <li>채용 분야에 <b>소프트웨어·네트워크</b>가 포함되며, 삼성전자·삼성SDI·삼성전기·삼성디스플레이 등이 참여합니다.</li>
+        <li>대회 직후인 11~12월에 채용 전형을 거쳐 이듬해 1월 입사. 전국대회 1·2위 입상자는 입사 후 국제기능올림픽 출전 후보로 별도 양성됩니다.</li>
+      </ul>
+    </li>
+    <li class="rung top">
+      <span class="lvl">STEP 3</span>
+      <h3>국제기능올림픽 국가대표</h3>
+      <ul>
+        <li>2년에 걸친 국가대표 평가전을 거쳐 선발 — 2026년 전국대회 입상자는 2028년 일본 아이치 대회 국가대표 선발전에 참가</li>
+        <li>국제대회 직종명은 '소프트웨어앱개발'. 입상 시 정보처리산업기사 또는 프로그래밍기능사 시험 면제</li>
+        <li>국가대표 합숙 훈련과 세계 무대 출전 기회</li>
+      </ul>
+    </li>
+  </ol>
+  <p class="note">자격 면제는 국가기술자격법 시행령 제16조에 따른 것으로, 1~3위 입상자에게 적용됩니다. 상금과 채용 조건은 매년 달라질 수 있으니 최신 내용은 <a href="https://www.q-net.or.kr/crf006.do?id=crf00622" target="_blank" rel="noopener">Q-Net 기능경기대회 입상자 면제 안내</a>와 마이스터넷(meister.hrdkorea.or.kr) 공고에서 확인하세요.</p>
+</section>
+
+<section id="club">
+  <h2>기능반에서는 무엇을 하나</h2>
+  <p class="lead">대회 과제는 미리 공개됩니다. 공개 과제를 반복해서 풀며 실전 속도와 정확도를 끌어올리는 것이 훈련의 핵심입니다.</p>
+  <div class="two">
+    <div class="card">
+      <h3>훈련 내용</h3>
+      <ul>
+        <li>C# WinForms + SQL Server, Java Swing + MySQL로 업무용 프로그램 구현</li>
+        <li>데이터베이스 설계·쿼리 작성, 폼 간 데이터 연동, 예외 처리</li>
+        <li>3시간 안에 과제를 완성하는 실전 모의경기</li>
+        <li>선배 선수의 풀이 코드 리뷰와 채점 기준표 분석</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>이런 학생을 찾습니다</h3>
+      <ul>
+        <li>프로그래밍을 더 깊이 배우고 싶은 학생 (경력 무관, 기초부터 지도)</li>
+        <li>방과 후·방학 중 꾸준히 훈련에 참여할 수 있는 학생</li>
+        <li>자격증과 입상 실적으로 진학·취업 경쟁력을 쌓고 싶은 학생</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contest">
+  <h2>정보기술 직종 대회 안내</h2>
+  <p class="lead">세 개의 과제를 각각 3시간씩, 사흘에 걸쳐 치릅니다. 전국대회에서는 팀 프로젝트 과제가 하나 더 추가됩니다.</p>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>과제</th><th>과제명</th><th>개발 환경</th><th class="num">지방대회 시간</th><th class="num">지방 배점</th><th class="num">전국 배점</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1과제</td><td>C#</td><td>Visual Studio 2022 · SQL Server 2022</td><td class="num">3시간</td><td class="num">32</td><td class="num">32</td></tr>
+        <tr><td>2과제</td><td>JAVA 1</td><td>Eclipse · JDK 12 · MySQL 8.0</td><td class="num">3시간</td><td class="num">34</td><td class="num">32</td></tr>
+        <tr><td>3과제</td><td>JAVA 2</td><td>Eclipse · JDK 12 · MySQL 8.0</td><td class="num">3시간</td><td class="num">34</td><td class="num">32</td></tr>
+        <tr><td>4과제</td><td>팀 프로젝트</td><td>전국대회만 적용</td><td class="num">—</td><td class="num">—</td><td class="num">4</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="3">합계</td><td class="num">9시간</td><td class="num">100</td><td class="num">100</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <ul class="chips">
+    <li>직종 설명서 2025 하반기 개편 · 2026 지방대회부터 적용</li>
+    <li>과제 사전 공개</li>
+    <li>연령 제한 없음</li>
+  </ul>
+
+  <div class="two" style="margin-top:18px">
+    <div class="card">
+      <h3>한 해의 흐름</h3>
+      <ol class="timeline">
+        <li><span class="when">11~12월</span><span>기능반 모집 · 기초 훈련 시작</span></li>
+        <li><span class="when">1월</span><span>지방대회 참가 신청 (시·도 기능경기위원회)</span></li>
+        <li><span class="when">4월</span><span>지방기능경기대회 (5일간, 17개 시·도)</span></li>
+        <li><span class="when">8~9월</span><span>전국기능경기대회 (지방대회 입상자 출전)</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>경기 당일은 이렇게</h3>
+      <ul>
+        <li>과제별로 심사위원 선정과 과제 공개 추첨 후 경기 시작</li>
+        <li>과제지와 선수 제공 파일(datafiles) 배부, 공개 질의응답 30분</li>
+        <li>3시간 경기 후 실행 파일과 datafiles 폴더 제출</li>
+        <li>채점 기준표에 따라 기능 단위로 채점</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="files">
+  <h2>참고 자료</h2>
+  <p class="lead">어떤 과제가 나오는지 직접 보세요. 지방기능경기대회 공개 과제 3종과 직종 설명서입니다.</p>
+  <ul class="files">
+    <li class="file">
+      <div class="ftype">PDF</div>
+      <div class="finfo"><div class="fname">제1과제 공개용 (C#)</div><div class="fdesc">열차 예매 프로그램 · 11쪽 · 0.8 MB</div></div>
+      <div class="factions"><a class="sbtn" href="files/제1과제_공개용_CSharp.pdf" target="_blank" rel="noopener">열기</a><a class="sbtn fill" href="files/제1과제_공개용_CSharp.pdf" download>다운로드</a></div>
+    </li>
+    <li class="file">
+      <div class="ftype">PDF</div>
+      <div class="finfo"><div class="fname">제2과제 공개용 (JAVA 1)</div><div class="fdesc">수강 신청 프로그램 · 11쪽 · 0.5 MB</div></div>
+      <div class="factions"><a class="sbtn" href="files/제2과제_공개용_JAVA1.pdf" target="_blank" rel="noopener">열기</a><a class="sbtn fill" href="files/제2과제_공개용_JAVA1.pdf" download>다운로드</a></div>
+    </li>
+    <li class="file">
+      <div class="ftype">PDF</div>
+      <div class="finfo"><div class="fname">제3과제 공개용 (JAVA 2)</div><div class="fdesc">영화 예매 프로그램 · 10쪽 · 0.5 MB</div></div>
+      <div class="factions"><a class="sbtn" href="files/제3과제_공개용_JAVA2.pdf" target="_blank" rel="noopener">열기</a><a class="sbtn fill" href="files/제3과제_공개용_JAVA2.pdf" download>다운로드</a></div>
+    </li>
+    <li class="file">
+      <div class="ftype">HWP</div>
+      <div class="finfo"><div class="fname">정보기술 직종 설명서</div><div class="fdesc">2025 하반기 개편 · 2026 지방대회부터 적용 · 한글 문서 0.9 MB / PDF 변환본 1.4 MB</div></div>
+      <div class="factions"><a class="sbtn" href="files/정보기술_직종설명서_2026.pdf" target="_blank" rel="noopener">PDF로 보기</a><a class="sbtn fill" href="files/정보기술_직종설명서_2026.hwp" download>HWP 다운로드</a></div>
+    </li>
+  </ul>
+</section>
+
+<section id="apply">
+  <div class="apply">
+    <h2>지원 방법</h2>
+    <p class="lead">아래 내용을 확인하고 담당 교사에게 직접 신청하세요. 프로그래밍 경험이 없어도 괜찮습니다.</p>
+    <dl>
+      <div><dt>모집 대상</dt><dd>1학년</dd></div>
+      <div><dt>모집 기간</dt><dd>2026. 11. 13.(금)까지</dd></div>
+      <div><dt>신청 · 문의</dt><dd>미래기술교육센터 김효겸 선생님</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>정보기술 기능반 · 지방기능경기대회 정보기술 직종 출전 준비반</p>
+  <p>혜택 관련 출처: Q-Net 기능경기대회 입상자 국가기술자격 면제 안내('26.6월 기준), 2025년도 지방기능경기대회 공고, 고용노동부 제58·59회 전국기능경기대회 보도자료(2023·2024), 2026년 제61회 전국기능경기대회 보도(동아일보·뉴시스), 삼성 뉴스룸 '전국기능경기대회 출전 우수인력 채용'(2021) 및 2026년 하반기 GSAT 보도. 과제 구성은 정보기술 직종 설명서(2025 하반기 개편)를 따릅니다.</p>
+</footer>
+
+</body>
+</html>
